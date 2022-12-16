@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding:0.5%;
+  color:darkgrey;
+  background-color:#f7fbfc;
+}
+
+ul {list-style: none;}
+a {
+  text-decoration: none;
+  color:darkgrey;
+}
+a:hover {
+ font-weight: bold;
+  color: #f1b51c;
+}
+
+ .header {
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: #f1b51c;
+   font-size: 16px;
+   padding:0.5%;
+ }
+
+ 
+ .bg-custom {
+     background-color: rgb(235, 242, 244) !important;
+ }
+
+ .menu {
+  background-color: rgb(235, 242, 244) !important;
+  color: #f1b51c;
+  padding-bottom: 0.5%;
+  padding-left: 0.5%;
+ 
+}
+
+.submenu {
+  background-color: rgba(20, 64, 74, 1) !important;
+  margin-top:0%;
+  padding-bottom: 0.5%;
+  padding-top: 0.5%;
+  border:rgb(235, 242, 244) solid 10px;
+  border-top:rgb(235, 242, 244) solid 0px;
+}
+nav {margin-left: 0;
+}
+nav li  {
+  display:inline-block;
+  margin: 0.5%;
+ 
+  }
+nav ul {
+    background-color: rgba(20, 64, 74, 1) !important;
+    margin: 0.5%;
+    
+    margin-left: 0%;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    width:100%;
+  }
+nav  a {
+    text-decoration: none;
+    color:rgb(254, 255, 255);
+    margin-left: 0;
+  }
+  body { 
+    padding:0.5%;
+    color:darkgrey;
+    background-color:#14404a;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color:darkgrey;
+  }
+  a:hover {
+   font-weight: bold;
+    color: #f1b51c;
+  }
+  a:active {
+    font-weight: bold;
+     color: #f1b51c;
+   }
+  nav ul {
+      background-color: rgba(95, 126, 135, 0.921);
+      margin: 0.5%;
+      padding-inline-start: 0%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width:100%;
+  }
+  nav li  {
+      display:inline-block;
+      margin: 0.5%;
+  }
+  nav a {
+      text-decoration: none;
+      font-size: larger;
+      color:rgb(254, 255, 255);
+  }
