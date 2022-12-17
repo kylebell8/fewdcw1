@@ -3,8 +3,8 @@
 Name: Kyle Bell<br>
 E-mail: kbell209@caledonian.ac.uk<br>
 Student Number: S1911702<br>
-
-This is the Practical coursework submission for Front-End Web Development, it's a single-page recipe application that allows a user to filter various recipes, view them, review them, and add the ingredients to a shopping list or the recipe to a menu. The application is also hosted on Heroku via the link https://cw1-test.herokuapp.com/ . This application may take a while to run, and sometimes, it takes a couple of seconds for the recipes to be gathered and displayed from the database. 
+<br>
+This is the Practical coursework submission for Front-End Web Development, it's a single-page recipe application that allows a user to filter various recipes, view them, review them, and add the ingredients to a shopping list or the recipe to a menu. The application is also hosted on Heroku via the link https://fewdpracticalcw.herokuapp.com/ . This application may take a while to run, and sometimes, it takes a couple of seconds for the recipes to be gathered and displayed from the database. 
 
 ## Functionality
 As previously mentioned, the application primarily revolves around creating a single-page application, mostly made with React, to view and manipulate different food recipes.
