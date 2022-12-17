@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MenuFilter from "./components/MenuDisplay"
 import ShoppingFilter from "./components/ShoppingListDisplay"
 
-
 export default function App() {
 
   const [foods, setFoods] = useState([{
