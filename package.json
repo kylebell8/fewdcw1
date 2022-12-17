@@ -1,11 +1,11 @@
 {
-  "name": "backend",
+  "name": "fewdapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "node index && cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
