@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd frontend && npm start && cd ../ && node index",
+    "start": "node index && cd frontend && npm start ",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
