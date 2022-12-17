@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Fewd Coursework 1 
+<br>
+Name: Kyle Bell<br>
+E-mail: kbell209@caledonian.ac.uk<br>
+Student Number: S1911702<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the Practical coursework submission for Front-End Web Development, it's a single-page recipe application that allows a user to filter various recipes, view them, review them, and add the ingredients to a shopping list or the recipe to a menu. The application is also hosted on Heroku via the link https://cw1-test.herokuapp.com/ . This application may take a while to run, and sometimes, it takes a couple of seconds for the recipes to be gathered and displayed from the database. 
 
-## Available Scripts
+## Functionality
+As previously mentioned, the application primarily revolves around creating a single-page application, mostly made with React, to view and manipulate different food recipes.
 
-In the project directory, you can run:
+In terms of functionality in relation to the specification the app includes the ability to:
+* Filter recipes based on allergens
+* Search and filter recipes based on their name
+* Search and filter recipes based on their ingredients
+* Add a recipe to the menu
+* Add the recipe's ingredients shopping list
+* Add reviews to a recipe
 
-### `npm start`
+## How To Run
+### Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Initially, the application must be cloned via the repository https://github.com/kylebell8/fewdcw1
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After this has been cloned, you will install the packages relevant to the application. First, there are the necessary backend packages, this is installed via the command "npm install" in the root directory.
 
-### `npm test`
+After the backend packages have been installed, the frontend folder must be navigated into via the command "cd frontend", and then "npm install" must be run again to install the respective packages for the frontend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Finally, for general ease with the next steps in running the application, simply use the command "cd .." to navigate back to the root folder.
 
-### `npm run build`
+### Running the app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In order to run the app, there are a few extra steps and commands to run. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Initially the Backend must be initialised, this is done with the command "node index" within the root folder of the application. On completion, in the terminal, you will see some output similar below.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+{ filename: 'recipe.db', autoload: true }
+recipe connected to [object Object]
+Server listening on 3001
 
-### `npm run eject`
+Then you must launch the frontend, either by right-clicking the frontend and clicking "Open in Integrated Terminal" or by simply opening another instance of the terminal and navigating to frontend via "cd frontend", then run the app via entering the command "npm start".
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Finally, you will now see there is a database running on port 3001, and a react app running on 3000, to use the application simply use the URL http://localhost:3000/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Reflection & Considerations
+Despite the application being finished, there is a couple of considerations for improvements in the future:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* A Register and Sign in system to give each user  a unique experience with them having their own corresponding menus and shopping lists tied to their accounts
+* In general, more interactivity with the  database such as actively modifying data in the backend would allow for extra functionality such as adding recipes or editing recipes
+* The ability to remove items from the menu & shopping list without having to navigate from other tabs to re-render the page
+* The ability to view the nutrition based on each ingredient within the recipe alone, as opposed to the nutrition details of the recipe as a whole
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Deployment 
+The live application can be accessed via this line:<br />
+https://fewdpracticalcw.herokuapp.com/<br />

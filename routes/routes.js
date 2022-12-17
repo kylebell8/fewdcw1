@@ -4,8 +4,6 @@ const controller = require("../controllers/controllers");
 
 router.get("/", controller.listRecipe);
 router.get("/food", controller.listMenu);
-router.get("/order", controller.listOrders);
-router.post('/addOrder', controller.addOrder);
 router.get("/new", controller.newList);
 router.get("/recipe",controller.listRecipe);
 

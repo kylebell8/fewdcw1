@@ -1,7 +1,3 @@
-const menuDAO = require("../models/menuModel");
-const menu = new menuDAO({ filename: "menu.db", autoload: true });
-const orderDAO = require("../models/ordersModel");
-const order = new orderDAO({ filename: "orders.db", autoload: true });
 const recipeDAO = require("../models/recipeModel");
 const recipe = new recipeDAO({ filename: "recipe.db", autoload: true });
 
