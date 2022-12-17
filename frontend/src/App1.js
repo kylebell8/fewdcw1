@@ -28,7 +28,7 @@ export default function App() {
   }]);
 
   const touchData = useCallback(() => {
-    const url = process.env.PORT || "http://localhost:3001/recipe";
+    const url = "http://localhost:3001/recipe";
     fetch(url)
       .then((response) => response.json())
       .then((incomingData) => {
