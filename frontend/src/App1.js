@@ -8,7 +8,7 @@ import NoPage from "./components/NoPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuFilter from "./components/MenuDisplay"
 import ShoppingFilter from "./components/ShoppingListDisplay"
-
+import dotenv from "dotenv";
 
 export default function App() {
 
@@ -28,7 +28,7 @@ export default function App() {
   }]);
 
   const touchData = useCallback(() => {
-    const url = "http://localhost:3001/recipe";
+    const url = process.env.PORT || "http://localhost:3001/recipe";
     fetch(url)
       .then((response) => response.json())
       .then((incomingData) => {
