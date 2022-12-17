@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "dotenv-webpack": "^8.0.1",
     "express": "^4.18.2",
     "meta": "^2.2.25",
     "nedb": "^1.8.0"

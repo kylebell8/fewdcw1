@@ -8,7 +8,7 @@ import NoPage from "./components/NoPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuFilter from "./components/MenuDisplay"
 import ShoppingFilter from "./components/ShoppingListDisplay"
-import dotenv from "dotenv";
+
 
 export default function App() {
 
