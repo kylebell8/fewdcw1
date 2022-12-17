@@ -14,13 +14,18 @@ function Search(params) {
     return entry.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
-const descriptionFiltered = details.filter((entry) => {
-  return entry.description.toLowerCase().includes(descriptionField.toLowerCase());
-});
+  const getData = (data, target) => {
+    return data.filter((entry) => {
+      return entry.ingredients.every((item) => {
+        return item.food_ingredient.toLowerCase().includes(descriptionField.toLowerCase());
+      });
+    });
+  };
 
 const combinedFiltered = details.filter((entry) => {
+  console.log(entry)
   return entry.name.toLowerCase().includes(searchField.toLowerCase()) &&
-         entry.description.toLowerCase().includes(descriptionField.toLowerCase());
+  entry.ingredients.some((item) => { return item.food_ingredient.includes(descriptionField)})
 });
 
 let result = combinedFiltered;
@@ -43,9 +48,6 @@ let result = combinedFiltered;
     })
 
   }
-
-  
-
 
   useEffect(() => {
     if (!filterDairy && !filterGluten && !filterNuts) {
