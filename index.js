@@ -18,11 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 const router = require('./routes/routes');
 app.use('/', router);
 
-app.use(express.static(path.join(dirname, "frontend", "build")))
+app.use(express.static(path.join(dirname, 'cd /frontend/build')))
 
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(dirname, "frontend", "build", "index.html"));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(dirname + 'cd /frontend/build/index.html'))
 })
 
 app.listen(process.env.PORT || 3001, () => {
