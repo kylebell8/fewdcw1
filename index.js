@@ -1,15 +1,11 @@
+
+const path = require('path');
+const dirname = path.dirname(__filename);
 const express = require("express");
 const app = express();
 
 const cors = require('cors');
 app.use(cors());
-
-const path = require('path');
-
-const dirname = path.dirname(__filename);
-
-
-
 
 
 const bodyParser  = require('body-parser');
