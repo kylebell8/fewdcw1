@@ -1,2 +1,5 @@
-web: cd front && npm i && npm start
-server: cd backend && npm i && npm start
+web: cd frontend && npm i
+web: npm start
+web: cd ../
+web: cd backend && npm i
+web: node index.js
