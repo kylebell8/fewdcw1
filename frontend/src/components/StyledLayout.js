@@ -58,7 +58,7 @@ function Layout() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="#008080"
             >
               <MenuIcon />
             </IconButton>
@@ -102,7 +102,7 @@ function Layout() {
               fontFamily: 'Castellar',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#008080',
               textDecoration: 'none',
             }}
           >

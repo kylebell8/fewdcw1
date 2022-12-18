@@ -4,8 +4,8 @@ const Home = () => {
   return (
     <>
       <h1>Welcome!</h1>
-      <p> McNulty's i</p>
-      <p> Probably would usually also have a banner image or Carousel or similar</p>
+      <p> McNulty's is a single-page web application for viewing and meddling with food recipes!</p>
+      <img src={require('./assets/homepage.png')} alt="various food items"></img>
     </>
   );
 };

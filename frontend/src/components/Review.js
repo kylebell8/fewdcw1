@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import "../index.css"
 
 const Review = ({ food }) => {
@@ -44,9 +45,11 @@ const Review = ({ food }) => {
                 <input type="text" value={reviewText} onChange={(e) => 
                     setReviewText(e.target.value)} placeholder="Leave a comment!">
                 </input>
-
-                <button onClick={() => handleClick()}> Add Review </button>
-
+                <div class="padbutton">
+                <Stack spacing={1} direction="row">
+                <Button onClick={() =>  handleClick()} variant="contained" size="small">Add Review</Button>
+                </Stack>
+                </div>
             {/*Change the below brs to not be there this is poor styling */}
 
                 {food.review.map((entry, i) => {

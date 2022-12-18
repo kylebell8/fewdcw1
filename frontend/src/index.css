@@ -22,7 +22,35 @@ a:hover {
 .search-bar {
   padding-top: 0.5%;
 }
- 
+
+.filtertext {
+  color: black;
+}
+
+.nutritionchart {
+  height: 50%;
+  width: 50%;
+}
+.accordion-header {
+  background-color: gray !important; 
+}
+
+@media screen and (max-width: 600px) {
+  .nutritionchart {
+    height: 100%;
+  width: 100%;
+  }
+}
+
+.padbutton {
+  padding: 10px;
+}
+
+.filterformatting {
+  padding: 10px;
+  color: black;
+}
+
  .bg-custom {
      background-color: rgb(235, 242, 244) !important;
  }

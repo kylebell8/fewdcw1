@@ -17,23 +17,49 @@ const handleChange = (event) => {
 };
 
   return (
+
+    
     <div>
       
       <Accordion.Header> {food.name}</Accordion.Header>
       
       <Accordion.Body>
-        <p>{food.category}</p>
+      <p>{food.category}</p>
         <p>{food.description}</p>
-        <p>{food.price}</p>
+        <p>Instuctions:</p>
+        <ol>
+        {food.instructions.map((step, i) => (
+        <li key={i}>{step}</li>
+          ))}
+        </ol>
         <p>Allergens Include: {food.allergens + " "} </p>
+
+        <Accordion>
+          <Accordion.Header>Ingredients</Accordion.Header>
+          <Accordion.Body>
+            <p>Ingredients Include:</p>
+            {food.ingredients.map((entry, i) => {
+              return <div>
+
+                {entry.food_ingredient}
+                {" "}
+                {entry.food_ingredientquantity}
+
+
+              </div>
+
+            })}
+          </Accordion.Body>
+        </Accordion>
         <FormGroup>
           <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
         </FormGroup>
         {OpenNutrition && <FetchNutrition query={food.name} />}
-        
+        <br></br>
         <Stack spacing={1} direction="row">
         <Button onClick={() =>  {food.menu.splice(0, food.menu.length)}} variant="contained" size="small">Remove from Menu</Button>
         </Stack>
+        <br></br>
         <Accordion>
           <Accordion.Header>Reviews</Accordion.Header>
           <Accordion.Body>
@@ -42,7 +68,7 @@ const handleChange = (event) => {
         </Accordion>
       </Accordion.Body>
 </div>
-
+ 
 
 ); };
 export default Item;

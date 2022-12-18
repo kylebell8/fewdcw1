@@ -18,7 +18,7 @@ function Search(params) {
   const combinedFiltered = details.filter((entry) => {
     console.log(entry)
     return entry.name.toLowerCase().includes(searchField.toLowerCase()) &&
-      entry.ingredients.some((item) => { return item.food_ingredient.includes(ingredientsField) })
+      entry.ingredients.some((item) => { return item.food_ingredient.toLowerCase().includes(ingredientsField.toLowerCase()) })
   });
 
   let result = combinedFiltered;
@@ -84,11 +84,13 @@ function Search(params) {
           style={{width:50+'%'}}/>
         
       </div>
-
-      <div> <label> Dairy </label> <input type="checkbox" value={filterDairy} onClick={() => setFilterDairy(!filterDairy)} /></div>
-      <div> <label> Gluten </label> <input type="checkbox" value={filterGluten} onClick={() => setFilterGluten(!filterGluten)} /></div>
-      <div> <label> Nuts </label> <input type="checkbox" value={filterNuts} onClick={() => setFilterNuts(!filterNuts)} /></div>
-
+      
+      <div class="filterformatting">
+      Filter by Allergen
+      <div> <label class="filtertext"> Dairy </label> <input type="checkbox" value={filterDairy} onClick={() => setFilterDairy(!filterDairy)} /></div>
+      <div> <label class="filtertext"> Gluten </label> <input type="checkbox" value={filterGluten} onClick={() => setFilterGluten(!filterGluten)} /></div>
+      <div> <label class="filtertext"> Nuts </label> <input type="checkbox" value={filterNuts} onClick={() => setFilterNuts(!filterNuts)} /></div>
+      </div>
       {displayData && <>
         {params.type === "recipe" && <RecipeItems type={"recipe"} items={displayData} />}
         {params.type === "shopping" && <RecipeItems type={"shopping"} items={displayData} />}

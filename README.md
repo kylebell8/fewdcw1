@@ -6,6 +6,12 @@ Student Number: S1911702<br>
 
 This is the Practical coursework submission for Front-End Web Development, it's a single-page recipe application that allows a user to filter various recipes, view them, review them, and add the ingredients to a shopping list or the recipe to a menu. The application is also hosted on Heroku via the link https://fewdpracticalcw.herokuapp.com/ . This application may take a while to run, and sometimes, it takes a couple of seconds for the recipes to be gathered and displayed from the database. 
 
+## Disclaimers
+There are a few methods of functionality that work either slowly or differently than normal due to the nature of the app being single-page as well as generally connecting to a slow api.
+* When nutritional data is toggled, it is not populated immediately, this is due to the fact that the api request isn't extremely quick and sometimes it takes a while, however for all recipes it does work
+* In the case the page is refreshed while on http://localhost:3000/Recipes, the recipe's aren't populated, this is remedied by starting at the home page as intended by clicking on the homepage button (McNulty's) in the navbar, or navigating to any other page so the recipes re-render with populated data 
+* The removal of recipes from shopping lists and menus functions in that you must navigate to another page and then back to the menu/shopping list page, this is an issue with the page not re-rendering upon menu item/shopping list removal.
+
 ## Functionality
 As previously mentioned, the application primarily revolves around creating a single-page application, mostly made with React, to view and manipulate different food recipes.
 

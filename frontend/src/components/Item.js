@@ -20,14 +20,15 @@ const Item = ({ food }) => {
 
   return (
     <div>
-
-      <Accordion.Header> {food.name}</Accordion.Header>
-
+      <div class="accordion-header">
+      <Accordion.Header class="accordion-header"> {food.name}</Accordion.Header>
+</div>
       <Accordion.Body>
       <p>{food.category}</p>
         <p>{food.description}</p>
         <p>Instuctions:</p>
         <ol>
+
         {food.instructions.map((step, i) => (
         <li key={i}>{step}</li>
           ))}
@@ -55,7 +56,9 @@ const Item = ({ food }) => {
         <FormGroup>
           <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
         </FormGroup>
+        <div class ="nutritionchart">
         {OpenNutrition && <FetchNutrition query={food.name} />}
+        </div>
         <br></br>
         <br></br>
         <Stack spacing={1} direction="row">
