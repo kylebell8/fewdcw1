@@ -2,7 +2,7 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Item from "./Item";
 import MenuItem from "./MenuItem"
-import Shoppingitem from "./ShoppingItem"
+import Shoppingitem from "./shoppingitem"
 
 const RecipeItems = (params) => {
   const recipes = params.items
