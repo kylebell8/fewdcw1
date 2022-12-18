@@ -32,7 +32,7 @@ Finally, for general ease with the next steps in running the application, simply
 
 In order to run the app, there are a few extra steps and commands to run. 
 
-Initially the Backend must be initialised, this is done with the command "node index" within the root folder of the application. On completion, in the terminal, you will see some output similar below.
+Initially the Backend must be initialized, this is done with the command "node index" within the root folder of the application. On completion, in the terminal, you will see some output similar below. Once initialized, you can use http://localhost:3001/api to view the database information if you so wish.
 
 { filename: 'recipe.db', autoload: true }
 recipe connected to [object Object]

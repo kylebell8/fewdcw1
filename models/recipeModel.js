@@ -14,7 +14,6 @@ class recipe {
             id: "1",
             name: "carrot cake TEST",
             description: "home made here",
-            price: "2.50",
             category: "dessert",
             ingredients: [{ food_ingredient: "flour", food_ingredientquantity: "800g/1lb 14oz" },
             { food_ingredient: "semolina flour", food_ingredientquantity: "200g/7oz" },
@@ -28,7 +27,7 @@ class recipe {
             { food_ingredient: "olive oil", food_ingredientquantity: "3 tbsp" },
             { food_ingredient: "sea salt and freshly ground black pepper", food_ingredientquantity: "1g" }],
             allergens: ["Dairy", "Gluten", "Nuts"],
-            available: "no",
+            instructions: "",
             review: [{
                 reviewName: ["Jimmy McNulty"],
                 reviewNumber: [4],
@@ -42,7 +41,6 @@ class recipe {
             id: "2",
             name: "sandwiches",
             description: "with a variety of fillings",
-            price: "2.50",
             category: ("starter and side"),
             ingredients: [{ food_ingredient: "flour", food_ingredientquantity: "800g/1lb 14oz" },
             { food_ingredient: "semolina flour", food_ingredientquantity: "200g/7oz" },
@@ -56,7 +54,7 @@ class recipe {
             { food_ingredient: "olive oil", food_ingredientquantity: "3 tbsp" },
             { food_ingredient: "sea salt and freshly ground black pepper", food_ingredientquantity: "1g" }],
             allergens: ["Dairy", "Gluten"],
-            available: "no",
+            instructions: "",
             review: [{
                 reviewName: ["Jay Landsman"],
                 reviewNumber: [2],
