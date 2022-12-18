@@ -1,11 +1,12 @@
-const recipeDAO = require("../models/recipeModel");
+const recipeDAO = require("../models/recipeDB");
 const recipe = new recipeDAO({ filename: "recipe.db", autoload: true });
 
 
-exports.newList = function (req, res) {
+exports.recipes = function (req, res) {
   recipe.init();
   res.redirect("/");
 };
+
 exports.listMenu = function (req, res) {
   menu.getAllEntries()
     .then((list) => {
@@ -16,7 +17,7 @@ exports.listMenu = function (req, res) {
       console.log("promise rejected", err);
     });
 };
-exports.listRecipe = function (req, res) {
+exports.recipelist = function (req, res) {
   recipe.getAllEntries()
     .then((list) => {
       res.json(list);
@@ -25,21 +26,4 @@ exports.listRecipe = function (req, res) {
     .catch((err) => {
       console.log("promise rejected", err);
     });
-};
-exports.listOrders = function (req, res) {
-  order.getAllEntries()
-    .then((list) => {
-      res.json(list);
-      console.log(list);
-    })
-    .catch((err) => {
-      console.log("promise rejected", err);
-    });
-};
-exports.addOrder = function (req, res) {
-  console.log("req body to add to database : ", req.body);
-  order.addEntry(req.body).catch((err) => {
-    console.log("promise rejected", err);
-  });
-  res.redirect("/");
 };

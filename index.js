@@ -1,16 +1,15 @@
 const path = require('path');
 const express = require('express');
-
+const bodyParser  = require('body-parser');
 const app = express();
 const cors = require('cors');
 app.use(cors());
 
-const bodyParser  = require('body-parser');
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false }));
 
 const router = require('./routes/routes');
-
 app.use('/api', router);
 
 app.use(express.static(path.resolve(__dirname, 'frontend','build')));

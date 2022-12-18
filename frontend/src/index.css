@@ -25,11 +25,17 @@ a:hover {
 
 .homeformat{
   padding: 0.5%;
-  color: white;
+  color: black;
 }
 
 .filtertext {
   color: black;
+}
+
+.imghome {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nutritionchart {
@@ -40,12 +46,19 @@ a:hover {
   background-color: gray !important; 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .nutritionchart {
-    height: 100%;
+    height: 200%;
   width: 100%;
   }
 }
+
+
+  .reviewtext {
+  max-width: 50%;
+  height: 200%;
+  }
+
 
 .padbutton {
   padding: 10px;
@@ -65,7 +78,6 @@ a:hover {
   color: #f1b51c;
   padding-bottom: 0.5%;
   padding-left: 0.5%;
- 
 }
 
 .rcorners {

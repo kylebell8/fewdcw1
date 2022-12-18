@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/controllers");
 
-router.get("/", controller.listRecipe);
+router.get("/", controller.recipelist);
 router.get("/food", controller.listMenu);
-router.get("/recipes", controller.newList);
-router.get("/recipe",controller.listRecipe);
+router.get("/recipes", controller.recipes);
+router.get("/recipe",controller.recipelist);
 
 
 router.use(function (req, res) {

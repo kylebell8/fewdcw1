@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import StyledLayout from "./components/StyledLayout";
+import Layout from "./components/AppBar";
 import Home from "./components/Home";
-import CategoryFilter from "./components/CategoryFilter"
+import CategoryFilter from "./components/Filter"
 import Item from "./components/Item";
 import NoPage from "./components/NoPage";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -43,11 +43,11 @@ export default function App() {
   
   return (
     <BrowserRouter>
-    <StyledLayout/>
+    <Layout/>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          <Route path="recipes" element={<CategoryFilter details={foods} type={"recipe"} />} >
+          <Route path="recipes" element={<CategoryFilter details={foods} type={"foodrecipe"} />} >
             <Route path=":itemId" element={<Item items={foods} />} />
           </Route>
           <Route path="/menus" element={<MenuFilter details={foods} />}>
