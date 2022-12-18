@@ -9,35 +9,46 @@ const Review = ({ food }) => {
     const [reviewText, setReviewText] = useState("")
     const handleClick = () => {
         if (reviewName !== 0 && reviewNumber !== 0 && reviewText !== 0) {
-            food.reviewName.push(reviewName) && food.reviewNumber.push(reviewNumber) && food.reviewText.push(reviewText)
-            console.log(food.reviewName) 
-            console.log(food.reviewNumber)
-            console.log(food.reviewText)
+            const UserReview = {
+                reviewName: reviewName,
+                reviewNumber: reviewNumber,
+                reviewText: reviewText,
+            }
+            console.log(food.review)
+            food.review.push(UserReview)
             setReviewName("");
             setReviewNumber(0);
-            setReviewText("0");
+            setReviewText("");
         }
 
-                
-                
+
+
     }
     return (
         <div className="cam-control">Review
 
 
             <Accordion.Body>
-            
-                <input type="text" value={reviewName} onChange={(e) => setReviewName(e.target.value)}placeholder="What is your name?">
+
+                <input type="text" value={reviewName} onChange={(e) => setReviewName(e.target.value)} placeholder="What is your name?">
                 </input>
                 <Stack spacing={1}>
-                <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => setReviewNumber(e.target.value)}/>
+                    <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => setReviewNumber(e.target.value)} />
                 </Stack>
-                <input type="text" value={reviewText} onChange={(e) => setReviewText(e.target.value)}placeholder="Leave a comment!">
+                <input type="text" value={reviewText} onChange={(e) => setReviewText(e.target.value)} placeholder="Leave a comment!">
                 </input>
-                
+
                 <button onClick={() => handleClick()}> Add Review </button>
-                
-                <p>{food.reviewName}</p><p><Stack spacing={1}><Rating name="half-rating-read" value={food.reviewNumber} defaultValue={2.5} precision={0.5} readOnly /></Stack></p><p>{food.reviewText}</p>
+
+
+                {food.review.map((entry, i) => {
+                    return <div>
+
+                        {entry.reviewName}<br></br>
+                        <p><Stack><Rating name="half-rating-read" value={entry.reviewNumber} readOnly /></Stack></p><br></br>
+                        {entry.reviewText}<br></br>
+                    </div>
+                })}
             </Accordion.Body>
         </div>
 

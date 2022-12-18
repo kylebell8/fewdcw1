@@ -1,5 +1,4 @@
 import React from "react";
-import MenuContext from "./MenuContext";
 import Accordion from "react-bootstrap/Accordion";
 import Item from "./Item";
 import MenuItem from "./MenuItem"
