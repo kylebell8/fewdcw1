@@ -8,14 +8,15 @@ const Review = ({ food }) => {
     const [reviewName, setReviewName] = useState("")
     const [reviewNumber, setReviewNumber] = useState("")
     const [reviewText, setReviewText] = useState("")
+
+    
     const handleClick = () => {
-        if (reviewName !== 0 && reviewNumber !== 0 && reviewText !== 0) {
+        if (reviewName !=="" && reviewNumber !== 0 && reviewText !=="") {
             const UserReview = {
                 reviewName: reviewName,
                 reviewNumber: reviewNumber,
                 reviewText: reviewText,
             }
-            console.log(food.review)
             food.review.push(UserReview)
             setReviewName("");
             setReviewNumber(0);
@@ -26,23 +27,27 @@ const Review = ({ food }) => {
 
     }
     return (
-        <div className="cam-control">
+        <div>
 
 
             <Accordion.Body>
 
-                <input type="text" value={reviewName} onChange={(e) => setReviewName(e.target.value)} placeholder="What is your name?">
+                <input type="text" value={reviewName} onChange={(e) => 
+                    setReviewName(e.target.value)} placeholder="What is your name?">
                 </input>
+
                 <Stack spacing={1}>
-                    <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => setReviewNumber(e.target.value)} /> 
+                    <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => 
+                        setReviewNumber(e.target.value)} /> 
                 </Stack>
                  
-                
-                <input type="text" value={reviewText} onChange={(e) => setReviewText(e.target.value)} placeholder="Leave a comment!">
+                <input type="text" value={reviewText} onChange={(e) => 
+                    setReviewText(e.target.value)} placeholder="Leave a comment!">
                 </input>
 
                 <button onClick={() => handleClick()}> Add Review </button>
 
+            {/*Change the below brs to not be there this is poor styling */}
 
                 {food.review.map((entry, i) => {
                     return <div>

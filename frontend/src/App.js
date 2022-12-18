@@ -19,7 +19,7 @@ export default function App() {
     category: "",
     ingredients: [],
     allergens: [],
-    instructions: "",
+    instructions: [],
     review: [],
     menu: [],
     shopping: []

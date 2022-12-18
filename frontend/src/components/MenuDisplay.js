@@ -6,8 +6,6 @@ function Search({ details }) {
         return entry.menu.includes("menu");
     });
     
-    //use entry.menu = [] to know that the array is empty
-
     return (
         <div>
            {<CatagoryFilter details={menufilter} type={"menu"}/>}

@@ -2,11 +2,19 @@ import React, { useState} from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import FetchNutrition from "./FetchNutrition";
 import Review from "./Review";
+import Switch from '@mui/material/Switch';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import "../index.css"
 
 const Item = ({ food }) => {
 const [OpenNutrition, SetOpenNutrition] = useState(false);
 
-
+const handleChange = (event) => {
+  SetOpenNutrition(!OpenNutrition);
+};
 
   return (
     <div>
@@ -17,13 +25,21 @@ const [OpenNutrition, SetOpenNutrition] = useState(false);
         <p>{food.category}</p>
         <p>{food.description}</p>
         <p>{food.price}</p>
-        <p>{food.allergens}</p>
-         
-        <button onClick={() => SetOpenNutrition(!OpenNutrition)}>Show Nutrition</button>
+        <p>Allergens Include: {food.allergens + " "} </p>
+        <FormGroup>
+          <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
+        </FormGroup>
         {OpenNutrition && <FetchNutrition query={food.name} />}
         
-        <p> <Review food={food}/> </p>
-        <button onClick={() =>  {food.menu.splice(0, food.menu.length)}}> Remove from Menu </button>
+        <Stack spacing={1} direction="row">
+        <Button onClick={() =>  {food.menu.splice(0, food.menu.length)}} variant="contained" size="small">Remove from Menu</Button>
+        </Stack>
+        <Accordion>
+          <Accordion.Header>Reviews</Accordion.Header>
+          <Accordion.Body>
+            <p><Review food={food}/></p>
+          </Accordion.Body>
+        </Accordion>
       </Accordion.Body>
 </div>
 

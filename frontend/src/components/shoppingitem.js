@@ -8,7 +8,6 @@ const Item = ({ food }) => {
     <div>
       
       <Accordion.Header> {food.name}</Accordion.Header>
-      
       <Accordion.Body>
         <p>{food.category}</p>
         <p>{food.description}</p>

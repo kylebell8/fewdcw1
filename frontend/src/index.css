@@ -5,14 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:darkgrey;
+  color:black;
   background-color:#f7fbfc;
 }
 
 ul {list-style: none;}
 a {
   text-decoration: none;
-  color:darkgrey;
+  color:white;
 }
 a:hover {
  font-weight: bold;
@@ -45,14 +45,10 @@ a:hover {
 }
   body { 
     color:darkgrey;
-    background-color:#14404a;
+    background-color:#ECD9BA;
   }
   ul {
     list-style: none;
-  }
-  a {
-    text-decoration: none;
-    color:darkgrey;
   }
   a:hover {
    font-weight: bold;
