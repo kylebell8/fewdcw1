@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from 'react-router-dom';
 
 const pages = ['Recipes', 'Menus', 'Shopping '];
 
@@ -58,7 +58,7 @@ function Layout() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="#008080"
+              color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -81,12 +81,15 @@ function Layout() {
               }}
             >
               {pages.map((page) => (
+                <div className="App" style={{ backgroundColor: "#1976d2" }}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                  <Link to ={`/${page}`}>{page}
-                    </Link>
+                  
+                  <Typography textAlign="center" color="black">
+                    <Link to={`/${page}`}>{page}</Link>
                   </Typography>
+                  
                 </MenuItem>
+                </div>
               ))}
             </Menu>
           </Box>
@@ -102,7 +105,7 @@ function Layout() {
               fontFamily: 'Castellar',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: '#008080',
+              color: 'inherit',
               textDecoration: 'none',
             }}
           >
@@ -113,9 +116,9 @@ function Layout() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                <Link to ={`/${page}`}>{page}</Link>
+                <Link to={`/${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
@@ -136,10 +139,7 @@ function Layout() {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-            >
-              
-            
-            </Menu>
+            ></Menu>
           </Box>
         </Toolbar>
       </Container>
@@ -147,4 +147,3 @@ function Layout() {
   );
 }
 export default Layout;
-
