@@ -76,7 +76,7 @@ const handleChange = (event) => {
         <br></br>
         {/* Create a button to remove the food from the menu */}
         <Stack spacing={1} direction="row">
-        <Button onClick={() =>  {food.menu.splice(0, food.menu.length)}} variant="contained" size="small">Remove from Menu</Button>
+        <Button onClick={() =>  {food.menu.splice(0, food.menu.length)}} variant="contained" size="small">Remove from Menu on re-render</Button>
         
         </Stack>
         

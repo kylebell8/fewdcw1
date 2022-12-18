@@ -36,7 +36,7 @@ const Item = ({ food }) => {
         <br></br>
         {/* Render a Stack component containing a Button component, which when clicked will remove all elements from the "shopping" array of the "food" object */}
         <Stack spacing={1} direction="row">
-          <Button onClick={() => { food.shopping.splice(0, food.shopping.length) }} variant="contained" size="small">Remove from Shopping List</Button>
+          <Button onClick={() => { food.shopping.splice(0, food.shopping.length) }} variant="contained" size="small">Remove from Shopping List on re-render</Button>
         </Stack>
         <br></br>
       </Accordion.Body>
