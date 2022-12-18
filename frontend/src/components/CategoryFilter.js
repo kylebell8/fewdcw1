@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import RecipeItems from "./RecipeItems";
-//test
+
 function Search(params) {
   const details = params.details
+
+  console.log(details)
+
   const [searchField, setSearchField] = useState("");
   const [filterDairy, setFilterDairy] = useState(false);
   const [filterGluten, setFilterGluten] = useState(false);
@@ -10,25 +13,12 @@ function Search(params) {
   const [displayData, setDisplayData] = useState("");
   const [descriptionField, setDescriptionField] = useState("");
 
-  const filtered = details.filter((entry) => {
-    return entry.name.toLowerCase().includes(searchField.toLowerCase());
-  });
-
-  const getData = (data, target) => {
-    return data.filter((entry) => {
-      return entry.ingredients.every((item) => {
-        return item.food_ingredient.toLowerCase().includes(descriptionField.toLowerCase());
-      });
-    });
-  };
-
 const combinedFiltered = details.filter((entry) => {
   console.log(entry)
-  return entry.name.toLowerCase().includes(searchField.toLowerCase()) &&
-  entry.ingredients.some((item) => { return item.food_ingredient.includes(descriptionField)})
+  return entry?.name?.toLowerCase().includes(searchField.toLowerCase()) &&
+  entry?.ingredients?.some((item) => { return item?.food_ingredient?.includes(descriptionField)})
+  
 });
-
-let result = combinedFiltered;
   
   const dairyData = (data) => {
     return data.filter((entry) => {
@@ -50,6 +40,7 @@ let result = combinedFiltered;
   }
 
   useEffect(() => {
+    let result = combinedFiltered;
     if (!filterDairy && !filterGluten && !filterNuts) {
       setDisplayData(combinedFiltered)
     }
@@ -101,8 +92,6 @@ let result = combinedFiltered;
 
 
   );
-
-
 
 }
 export default Search;
