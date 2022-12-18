@@ -70,30 +70,27 @@ function Search(parameters) {
   // If any of the checkboxes are checked, it filters `filter` using the corresponding function 
   // (e.g. `dairyData` if `filterDairy` is `true`) and sets `recipeData` to the filtered `filter`.
   useEffect(() => {
-    if (!filterDairy && !filterGluten && !filterNuts && !filterVegan && !filterVegetarian) {
-      setRecipeData(finalFilter)
+    const filters = {
+      filterDairy: dairyData,
+      filterGluten: glutenData,
+      filterNuts: nutsData,
+      filterVegan: veganData,
+      filterVegetarian: vegetarianData,
+    };
+  
+    let activeFilters = [];
+    for (let filter in filters) {
+      if (eval(filter)) {
+        activeFilters.push(filters[filter]);
+      }
     }
-
-    else {
-
-      if (filterDairy) {
-        filter = dairyData(filter)
-      }
-      if (filterGluten) {
-        filter = glutenData(filter)
-      }
-      if (filterNuts) {
-        filter = nutsData(filter)
-      }
-      if (filterVegan) {
-        filter = veganData(filter)
-      }
-      if (filterVegetarian) {
-        filter = vegetarianData(filter)
-      }
-      setRecipeData(filter)
-    }
-  }, [searchValue, ingredientsValue, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian])
+  
+    let filteredData = finalFilter;
+    activeFilters.forEach((filterFn) => {
+      filteredData = filterFn(filteredData);
+    });
+    setRecipeData(filteredData);
+  }, [searchValue, ingredientsValue, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian]);
 
 
   return (
