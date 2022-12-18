@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false }));
 
 const router = require('./routes/routes');
+
 app.use('/api', router);
 
 app.use(express.static(path.resolve(__dirname, 'frontend','build')));

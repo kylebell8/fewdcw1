@@ -23,6 +23,11 @@ a:hover {
   padding-top: 0.5%;
 }
 
+.homeformat{
+  padding: 0.5%;
+  color: white;
+}
+
 .filtertext {
   color: black;
 }
@@ -63,14 +68,11 @@ a:hover {
  
 }
 
-.submenu {
-  background-color: rgba(20, 64, 74, 1) !important;
-  margin-top:0%;
-  padding-bottom: 0.5%;
-  padding-top: 0.5%;
-  border:rgb(235, 242, 244) solid 10px;
-  border-top:rgb(235, 242, 244) solid 0px;
+.rcorners {
+  border-radius: 5px;
+  border: 2px solid black; 
 }
+
   body { 
     color:darkgrey;
     background-color:#ECD9BA;
@@ -86,3 +88,18 @@ a:hover {
     font-weight: bold;
      color: #f1b51c;
    }
+
+  .checkbox-inline {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 1%;
+}

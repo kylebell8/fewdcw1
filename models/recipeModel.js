@@ -27,6 +27,8 @@ class recipe {
             { food_ingredient: "olive oil", food_ingredientquantity: "3 tbsp" },
             { food_ingredient: "sea salt and freshly ground black pepper", food_ingredientquantity: "1g" }],
             allergens: ["Dairy", "Gluten"],
+            vegan: "",
+            vegetarian: "vegetarian",
             instructions: [
                 "To make the dough, place the flours, salt, sugar and yeast into a large bowl and stir. Make a well in the centre of the flour and pour in the water, gradually mixing in the flour to form a soft dough.",
                 "Tip out and knead on an oiled work surface for about 10 minutes or until the dough is smooth and elastic. Place it into a bowl, cover with cling film and refrigerate for 24 hours.",
@@ -62,6 +64,8 @@ class recipe {
             { food_ingredient: "Mustard", food_ingredientquantity: "1tbsp" }
                 ],
             allergens: ["Gluten"],
+            vegan: "",
+            vegetarian: "",
             instructions: [
                 "Melt the butter in a saucepan over a medium–low heat. Add the sliced onions and a pinch of salt. Cook the onions for 20–25 minutes, stirring occasionally, until they are very soft and dark brown. Sprinkle over the flour and stir, cooking for 5 minutes until the mixture smells slightly toasty.",
                 "Pour in the red wine (if using), stirring constantly, and simmer for a minute before adding the soy sauce and tomato purée. Stir until completely incorporated and smooth before gradually adding the stock, stirring until the stock is incorporated and the gravy is silky and thickened. Season with salt and pepper. Simmer the gravy for 5 minutes or so.",
@@ -97,6 +101,8 @@ class recipe {
             { food_ingredient: "American style cheese", food_ingredientquantity: "2 slices" }
                 ],
             allergens: ["Gluten","Dairy"],
+            vegan: "",
+            vegetarian: "",
             instructions: [
                 "Mix the minced beef together in a bowl with the bone marrow, Worcestershire sauce and Tabasco.",
                 "Season the meat with salt and a little black pepper, then divide the mixture into 4 (or 10 if making sliders) and shape each one into a round pattie 2–2.5cm/¾–1in thick.",
@@ -124,6 +130,8 @@ class recipe {
             { food_ingredient: "coconut oil", food_ingredientquantity: "400ml/14fl oz" }
                 ],
             allergens: [],
+            vegan: "vegan",
+            vegetarian: "vegetarian",
             instructions: [
                 "Place all of the ingredients in a blender, adding the coconut oil last (if using). Start to blend at a low speed, gradually increasing until the smoothie is thick and creamy.",
                 "Pour into a chilled glass and serve.",
@@ -149,6 +157,8 @@ class recipe {
             { food_ingredient: "Parmesan", food_ingredientquantity: "400ml/14fl oz" }
                 ],
             allergens: ["Dairy"],
+            vegan: "",
+            vegetarian: "vegetarian",
             instructions: [
                 "Cook the macaroni in a large saucepan of boiling salted water for 8–10 minutes. Drain well and set aside.",
                 "Melt the butter over a medium heat in a saucepan slightly larger than that used for the macaroni. Add the flour and stir to form a roux, cooking for a few minutes.",
@@ -185,6 +195,8 @@ class recipe {
             { food_ingredient: "water", food_ingredientquantity: "50ml/2fl oz" }
                 ],
             allergens: ["Gluten","Nuts"],
+            vegan: "",
+            vegetarian: "vegetarian",
             instructions: [
                 "For the pasta, place the flour into a food processor, crack in the eggs and pulse to combine. Add a little water, if necessary, to make the dough come together (the dough should ball together when you rub a piece between your fingers).",
                 "Turn the dough out onto a floured work surface and knead lightly for 2-3 minutes, or until smooth and elastic. Flatten out the dough and roll to a 1cm/½in thickness. Wrap the dough in clingfilm and leave to rest in the fridge for 30 minutes to relax.",
@@ -223,6 +235,8 @@ class recipe {
             { food_ingredient: "spring onion", food_ingredientquantity: "1 whole"}
                 ],
             allergens: ["Gluten"],
+            vegan: "",
+            vegetarian: "",
             instructions: [
                 "Bring a saucepan of water to a rolling boil, carefully lower in the egg and cook for 6½ minutes.",
                 "Remove the egg and transfer to a bowl of cold water. Leave to cool completely (change the water once or twice if it starts to warm up). Peel the egg and, if you have time, marinade it in the soy sauce and mirin for an hour (optional).",
@@ -254,6 +268,8 @@ class recipe {
             { food_ingredient: "boiling water", food_ingredientquantity: "250ml/9fl oz" }
                 ],
             allergens: ["Gluten"],
+            vegan: "",
+            vegetarian: "vegetarian",
             instructions: [
                 "Preheat the oven to 180C/160C Fan/Gas 4. Grease and line two 20cm/8in sandwich tins.",
                 "For the cake, place all of the cake ingredients, except the boiling water, into a large mixing bowl. Using a wooden spoon, or electric whisk, beat the mixture until smooth and well combined.",
@@ -293,6 +309,8 @@ class recipe {
             { food_ingredient: "cream cheese", food_ingredientquantity: "300g/10½oz" }
                 ],
             allergens: ["Gluten", "Dairy"],
+            vegan: "",
+            vegetarian: "vegetarian",
             instructions: [
                 "For the carrot cake, preheat the oven to 180C/170C Fan/Gas 4. Grease and line a deep, 20cm/8in round cake tin with baking paper.",
                 "Break the eggs into a large bowl, and lightly whisk using a fork. Add the vegetable oil and whisk again. Stir in the grated carrots, raisins, walnut pieces and orange zest.",

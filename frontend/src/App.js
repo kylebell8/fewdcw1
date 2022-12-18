@@ -19,6 +19,8 @@ export default function App() {
     category: "",
     ingredients: [],
     allergens: [],
+    vegan: "",
+    vegetarian: "",
     instructions: [],
     review: [],
     menu: [],

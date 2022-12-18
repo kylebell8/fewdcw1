@@ -8,12 +8,10 @@ function Search(params) {
   const [filterDairy, setFilterDairy] = useState(false);
   const [filterGluten, setFilterGluten] = useState(false);
   const [filterNuts, setFilterNuts] = useState(false);
+  const [filterVegan, setFilterVegan] = useState(false);
+  const [filterVegetarian, setFilterVegetarian] = useState(false);
   const [displayData, setDisplayData] = useState("");
   const [ingredientsField, setIngredientsField] = useState("");
-
-  const filtered = details.filter((entry) => {
-    return entry.name.toLowerCase().includes(searchField.toLowerCase());
-  });
 
   const combinedFiltered = details.filter((entry) => {
     console.log(entry)
@@ -41,9 +39,21 @@ function Search(params) {
     })
 
   }
+  const veganData = (data) => {
+    return data.filter((entry) => {
+      return entry.vegan.includes("vegan")
+    })
+
+  }
+  const vegetarianData = (data) => {
+    return data.filter((entry) => {
+      return entry.vegetarian.includes("vegetarian")
+    })
+
+  }
 
   useEffect(() => {
-    if (!filterDairy && !filterGluten && !filterNuts) {
+    if (!filterDairy && !filterGluten && !filterNuts && !filterVegan && !filterVegetarian) {
       setDisplayData(combinedFiltered)
     }
 
@@ -58,9 +68,15 @@ function Search(params) {
       if (filterNuts) {
         result = nutsData(result)
       }
+      if (filterVegan) {
+        result = veganData(result)
+      }
+      if (filterVegetarian) {
+        result = vegetarianData(result)
+      }
       setDisplayData(result)
     }
-  }, [searchField, ingredientsField, filterDairy, filterGluten, filterNuts])
+  }, [searchField, ingredientsField, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian])
 
 
   return (
@@ -84,12 +100,19 @@ function Search(params) {
           style={{width:50+'%'}}/>
         
       </div>
-      
-      <div class="filterformatting">
+<div class="flex-container">
+      <div class="filterformatting" >
       Filter by Allergen
       <div> <label class="filtertext"> Dairy </label> <input type="checkbox" value={filterDairy} onClick={() => setFilterDairy(!filterDairy)} /></div>
       <div> <label class="filtertext"> Gluten </label> <input type="checkbox" value={filterGluten} onClick={() => setFilterGluten(!filterGluten)} /></div>
       <div> <label class="filtertext"> Nuts </label> <input type="checkbox" value={filterNuts} onClick={() => setFilterNuts(!filterNuts)} /></div>
+      </div>
+      
+      <div class="filterformatting">
+      Filter by Diet
+      <div> <label class="filtertext"> Vegan </label> <input type="checkbox" value={filterVegan} onClick={() => setFilterVegan(!filterVegan)} /></div>
+      <div> <label class="filtertext"> Vegetarian </label> <input type="checkbox" value={filterVegetarian} onClick={() => setFilterVegetarian(!filterVegetarian)} /></div>
+      </div>
       </div>
       {displayData && <>
         {params.type === "recipe" && <RecipeItems type={"recipe"} items={displayData} />}

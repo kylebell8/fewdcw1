@@ -34,7 +34,7 @@ const Item = ({ food }) => {
           ))}
         </ol>
         <p>Allergens Include: {food.allergens + " "} </p>
-
+        <div class="rcorners">
         <Accordion>
           <Accordion.Header>Ingredients</Accordion.Header>
           <Accordion.Body>
@@ -52,7 +52,7 @@ const Item = ({ food }) => {
             })}
           </Accordion.Body>
         </Accordion>
-
+        </div>
         <FormGroup>
           <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
         </FormGroup>
@@ -66,12 +66,14 @@ const Item = ({ food }) => {
           <Button onClick={() => food.shopping.splice(0, food.shopping.length, "shopping") && console.log(food.shopping)} variant="contained" size="small">Add To Shopping</Button>
         </Stack>
         <br></br>
+        <div class="rcorners">
         <Accordion>
           <Accordion.Header>Reviews</Accordion.Header>
           <Accordion.Body>
             <p><Review food={food} /></p>
           </Accordion.Body>
         </Accordion>
+        </div>
       </Accordion.Body>
     </div>
 
