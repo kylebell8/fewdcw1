@@ -47,7 +47,7 @@ Server listening on 3001
 
 Then you must launch the frontend, either by right-clicking the frontend and clicking "Open in Integrated Terminal" or by simply opening another instance of the terminal and navigating to frontend via "cd frontend", then run the app via entering the command "npm start".
 
-Finally, you will now see there is a database running on port 3001, and a react app running on 3000, to use the application simply use the URL http://localhost:3000/
+Finally, you will now see there is a database running on port 3001, and a react app running on 3000, to use the application locally simply use the URL http://localhost:3000/ . You can then navigate from the initial homepage by clicking on the nav bar headers. The logo "McNulty" can be clicked to go back to home.
 
 ## Reflection & Considerations
 Despite the application being finished, there is a couple of considerations for improvements in the future:
