@@ -16,11 +16,10 @@ export default function App() {
     id: "",
     name: "",
     description: "",
-    price: "",
     category: "",
     ingredients: [],
     allergens: [],
-    available: "",
+    instructions: "",
     review: [],
     menu: [],
     shopping: []

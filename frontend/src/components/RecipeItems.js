@@ -13,8 +13,6 @@ const MenuItems = (params) => {
           <Accordion.Item eventKey={index} key={index}>
             {params.type === "recipe" && <Item food={food} />}
             {params.type === "shopping" && <Shoppingitem food={food} />}
-
-            
             {params.type === "menu" && <MenuItem food={food}/> }
             
           </Accordion.Item>
