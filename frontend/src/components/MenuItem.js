@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import FetchNutrition from "./FetchNutrition";
 import Review from "./Review";

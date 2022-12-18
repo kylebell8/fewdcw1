@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React from "react";
 import CatagoryFilter from "./CategoryFilter"
 function Search({ details }) {
     
