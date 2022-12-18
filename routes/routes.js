@@ -11,7 +11,7 @@ router.get("/recipe",controller.listRecipe);
 router.use(function (req, res) {
     res.status(404);
     res.type('text/plain');
-    res.send('404 Not found.');
+    res.send('404 Error, page not found.');
 });
 
 router.use(function (err, req, res, next) {

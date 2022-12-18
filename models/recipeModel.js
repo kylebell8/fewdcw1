@@ -1,12 +1,12 @@
 const nedb = require("nedb");
 
 class recipe {
-    constructor(PathToRecipe) {
-        console.log(PathToRecipe);
-        if (PathToRecipe) {
-            this.recipe = new nedb(PathToRecipe);
-            console.log("recipe connected to " + PathToRecipe);
-            PathToRecipe;
+    constructor(Path) {
+        console.log(Path);
+        if (Path) {
+            this.recipe = new nedb(Path);
+            console.log("recipes connected " + Path);
+            Path;
         } 
     }
     init() {

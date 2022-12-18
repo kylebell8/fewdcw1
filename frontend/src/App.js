@@ -41,8 +41,9 @@ export default function App() {
   
   return (
     <BrowserRouter>
+    <StyledLayout/>
       <Routes>
-        <Route path="/" element={<StyledLayout />}>
+        <Route path="/">
           <Route index element={<Home />} />
           <Route path="recipes" element={<CategoryFilter details={foods} type={"recipe"} />} >
             <Route path=":itemId" element={<Item items={foods} />} />

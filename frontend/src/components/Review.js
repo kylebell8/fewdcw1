@@ -3,6 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import "../index.css"
+
 const Review = ({ food }) => {
     const [reviewName, setReviewName] = useState("")
     const [reviewNumber, setReviewNumber] = useState("")
@@ -25,7 +26,7 @@ const Review = ({ food }) => {
 
     }
     return (
-        <div className="cam-control">Review
+        <div className="cam-control">
 
 
             <Accordion.Body>
@@ -33,8 +34,10 @@ const Review = ({ food }) => {
                 <input type="text" value={reviewName} onChange={(e) => setReviewName(e.target.value)} placeholder="What is your name?">
                 </input>
                 <Stack spacing={1}>
-                    <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => setReviewNumber(e.target.value)} />
+                    <Rating name="half-rating" value={reviewNumber} defaultValue={2.5} precision={0.5} onChange={(e) => setReviewNumber(e.target.value)} /> 
                 </Stack>
+                 
+                
                 <input type="text" value={reviewText} onChange={(e) => setReviewText(e.target.value)} placeholder="Leave a comment!">
                 </input>
 
@@ -45,7 +48,8 @@ const Review = ({ food }) => {
                     return <div>
                         <br></br>
                         {entry.reviewName}<br></br>
-                        <p><Stack><Rating name="half-rating-read" value={entry.reviewNumber} readOnly /></Stack></p><br></br>
+                        <p><Stack><Rating name="half-rating-read" value={entry.reviewNumber} readOnly /></Stack></p>
+                        <br></br>
                         {entry.reviewText}<br></br>
                         <br></br>
                     </div>

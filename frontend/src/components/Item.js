@@ -2,9 +2,21 @@ import React, { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import FetchNutrition from "./FetchNutrition";
 import Review from "./Review";
+import Switch from '@mui/material/Switch';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import "../index.css"
 
 const Item = ({ food }) => {
   const [OpenNutrition, SetOpenNutrition] = useState(false);
+
+  const handleChange = (event) => {
+    SetOpenNutrition(!OpenNutrition);
+  };
+
+
 
   return (
     <div>
@@ -15,20 +27,23 @@ const Item = ({ food }) => {
         <p>{food.category}</p>
         <p>{food.description}</p>
         <p>{food.price}</p>
-        <p>{food.allergens}</p>
-
-
-        <button onClick={() => SetOpenNutrition(!OpenNutrition)}>Toggle Nutrition</button>
+        <p>Allergens Include: {food.allergens + " "} </p>
+        
+        <FormGroup>
+          <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
+        </FormGroup>
         {OpenNutrition && <FetchNutrition query={food.name} />}
         <br></br>
         <br></br>
-        <button onClick={() => food.menu.splice(0, food.menu.length, "menu") && console.log(food.menu)}> Add To Menu </button>
-        <button onClick={() => food.shopping.splice(0, food.shopping.length, "shopping") && console.log(food.shopping)}> Add To shopping </button><br></br>
-
+        <Stack spacing={1} direction="row">
+        <Button onClick={() => food.menu.splice(0, food.menu.length, "menu") && console.log(food.menu)} variant="contained" size="small">Add to Menu</Button>
+        <Button onClick={() => food.shopping.splice(0, food.shopping.length, "shopping") && console.log(food.shopping)} variant="contained" size="small">Add To Shopping</Button>
+        </Stack>
+        <br></br>
         <Accordion>
           <Accordion.Header>Reviews</Accordion.Header>
           <Accordion.Body>
-            <p><Review food={food} /></p>
+            <p><Review food={food}/></p>
           </Accordion.Body>
         </Accordion>
       </Accordion.Body>

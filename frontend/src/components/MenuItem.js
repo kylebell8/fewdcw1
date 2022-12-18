@@ -14,7 +14,7 @@ const [OpenNutrition, SetOpenNutrition] = useState(false);
       <Accordion.Header> {food.name}</Accordion.Header>
       
       <Accordion.Body>
-      <p>{food.category}</p>
+        <p>{food.category}</p>
         <p>{food.description}</p>
         <p>{food.price}</p>
         <p>{food.allergens}</p>
@@ -22,7 +22,7 @@ const [OpenNutrition, SetOpenNutrition] = useState(false);
         <button onClick={() => SetOpenNutrition(!OpenNutrition)}>Show Nutrition</button>
         {OpenNutrition && <FetchNutrition query={food.name} />}
         
-        <p><Review food={food}/></p>
+        <p> <Review food={food}/> </p>
         <button onClick={() =>  {food.menu.splice(0, food.menu.length)}}> Remove from Menu </button>
       </Accordion.Body>
 </div>

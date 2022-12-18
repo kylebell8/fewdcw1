@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -14,6 +15,7 @@
     "chart.js": "^4.0.1",
     "dotenv": "^16.0.3",
     "http-proxy-middleware": "^2.0.6",
+    "icons": "^1.0.0",
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
