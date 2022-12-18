@@ -30,9 +30,9 @@ class recipe {
             allergens: ["Dairy", "Gluten", "Nuts"],
             available: "no",
             review: [{
-                reviewName: [],
-                reviewNumber: [],
-                reviewText: []
+                reviewName: ["Jimmy McNulty"],
+                reviewNumber: [4],
+                reviewText: ["Decent recipe, some of the ingredients a little hard to find at my local shop"]
             }],
 
             menu: [],
@@ -58,9 +58,9 @@ class recipe {
             allergens: ["Dairy", "Gluten"],
             available: "no",
             review: [{
-                reviewName: [],
-                reviewNumber: [],
-                reviewText: []
+                reviewName: ["Jay Landsman"],
+                reviewNumber: [2],
+                reviewText: ["The small amount of ingredients led to small portions, not enough for me, anyone reading should buy more!"]
             }],
             menu: [],
             shopping: []

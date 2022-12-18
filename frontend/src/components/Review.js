@@ -43,10 +43,10 @@ const Review = ({ food }) => {
 
                 {food.review.map((entry, i) => {
                     return <div>
-
                         {entry.reviewName}<br></br>
                         <p><Stack><Rating name="half-rating-read" value={entry.reviewNumber} readOnly /></Stack></p><br></br>
                         {entry.reviewText}<br></br>
+                        <br></br>
                     </div>
                 })}
             </Accordion.Body>

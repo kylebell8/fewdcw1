@@ -23,7 +23,6 @@ const [OpenNutrition, SetOpenNutrition] = useState(false);
         {OpenNutrition && <FetchNutrition query={food.name} />}
         
         <p><Review food={food}/></p>
-        <p>{food.review}</p>
         <button onClick={() =>  {food.menu.splice(0, food.menu.length)}}> Remove from Menu </button>
       </Accordion.Body>
 </div>
