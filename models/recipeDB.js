@@ -124,7 +124,7 @@ class recipe {
             category: ("drink"),
             ingredients: [{ food_ingredient: "banana", food_ingredientquantity: "2 thinly sliced" },
             { food_ingredient: "dairy-free milk", food_ingredientquantity: "1 tbsp" },
-            { food_ingredient: "cinnamin", food_ingredientquantity: "1 glass" },
+            { food_ingredient: "cinnamon", food_ingredientquantity: "1 glass" },
             { food_ingredient: "dried apricots", food_ingredientquantity: "1 tbsp" },
             { food_ingredient: "fresh lime juice", food_ingredientquantity: "1 tbsp" },
             { food_ingredient: "coconut oil", food_ingredientquantity: "400ml/14fl oz" }
@@ -267,7 +267,7 @@ class recipe {
             { food_ingredient: "vanilla extract", food_ingredientquantity: "2 tsp" },
             { food_ingredient: "boiling water", food_ingredientquantity: "250ml/9fl oz" }
                 ],
-            allergens: ["Gluten"],
+            allergens: ["Gluten", "Dairy"],
             vegan: "",
             vegetarian: "vegetarian",
             instructions: [

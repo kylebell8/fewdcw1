@@ -5,9 +5,9 @@ import MenuItem from "./MenuItem" // Import the MenuItem component from the curr
 import Shoppingitem from "./shoppingitem" // Import the Shoppingitem component from the current directory
 
 // This is a functional React component called "RecipeItems" that displays a list of food items or recipes
-const RecipeItems = (params) => {
+const RecipeItems = (parameters) => {
   // "recipes" is an array of food items or recipes passed to the component as a prop
-  const recipes = params.items
+  const recipes = parameters.items
   // Render the component
   return (
     // Render an Accordion component from the react-bootstrap library with a width of 80%
@@ -18,9 +18,9 @@ const RecipeItems = (params) => {
           // Set the "eventKey" prop of the Accordion.Item component to the index of the current item in the array
           <Accordion.Item eventKey={index} key={index}>
             {/* Depending on the value of the "type" prop, render a different type of component for each item */}
-            {params.type === "foodrecipe" && <Item food={food} />}
-            {params.type === "recipemenu" && <MenuItem food={food} />}
-            {params.type === "shoppinglist" && <Shoppingitem food={food} />}
+            {parameters.type === "foodrecipe" && <Item food={food} />}
+            {parameters.type === "recipemenu" && <MenuItem food={food} />}
+            {parameters.type === "shoppinglist" && <Shoppingitem food={food} />}
           </Accordion.Item>
         );
 

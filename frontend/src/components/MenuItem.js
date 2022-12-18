@@ -67,7 +67,9 @@ const handleChange = (event) => {
           <FormControlLabel control={<Switch onChange={handleChange} defaultunchecked />} label="Toggle Nutritional Data" />
         </FormGroup>
         {/* If the toggle switch is turned on, render the FetchNutrition component */}
+        <div class ="nutritionchart">
         {toggleNutrition && <FetchNutrition query={food.name} />}
+        </div>
         <br></br>
         {/* Create a button to remove the food from the menu */}
         <Stack spacing={1} direction="row">

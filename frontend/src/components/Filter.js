@@ -4,47 +4,47 @@ import Checkbox from '@mui/material/Checkbox';
 import "../index.css"
 //handle imports
 
-function Search(params) {
-  const details = params.details
+function Search(parameters) {
+  const details = parameters.details
   // Declare a state variable called details and assign it the value of the details prop passed to the component
-  // Declare state variables searchField, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian, recipeData, and ingredientsField and set their initial values using useState
-  const [searchField, setSearchField] = useState("");
+  // Declare state variables searchValue, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian, recipeData, and ingredientsValue and set their initial values using useState
+  const [searchValue, setSearchValue] = useState("");
   const [filterDairy, setFilterDairy] = useState(false);
   const [filterGluten, setFilterGluten] = useState(false);
   const [filterNuts, setFilterNuts] = useState(false);
   const [filterVegan, setFilterVegan] = useState(false);
   const [filterVegetarian, setFilterVegetarian] = useState(false);
   const [recipeData, setRecipeData] = useState("");
-  const [ingredientsField, setIngredientsField] = useState("");
+  const [ingredientsValue, setIngredientsValue] = useState("");
 
 
-  // Declare a variable called combinedFiltered which is a filtered version of details based on the values of searchField and ingredientsField
-  const combinedFiltered = details.filter((entry) => {
-    console.log(entry)
-    return entry.name.toLowerCase().includes(searchField.toLowerCase()) &&
-      entry.ingredients.some((item) => { return item.food_ingredient.toLowerCase().includes(ingredientsField.toLowerCase()) })
+  // Declare a variable called finalFilter which is a filtered version of details based on the values of searchValue and ingredientsValue
+  const finalFilter = details.filter((recipe) => {
+    return recipe.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+    recipe.ingredients.some((item) => { return item.food_ingredient.toLowerCase().includes(ingredientsValue.toLowerCase()) })
+      console.log(recipe)
   });
 
-  let result = combinedFiltered;
+  let filter = finalFilter;
 
 
   // These functions are called when the corresponding checkbox is checked. 
   // They filter the `data` passed to them by removing any entries that contain the specified allergen.
   const dairyData = (data) => {
-    return data.filter((entry) => {
-      return !entry.allergens.includes("Dairy")
+    return data.filter((recipe) => {
+      return !recipe.allergens.includes("Dairy")
     })
 
   }
   const glutenData = (data) => {
-    return data.filter((entry) => {
-      return !entry.allergens.includes("Gluten")
+    return data.filter((recipe) => {
+      return !recipe.allergens.includes("Gluten")
     })
 
   }
   const nutsData = (data) => {
-    return data.filter((entry) => {
-      return !entry.allergens.includes("Nuts")
+    return data.filter((recipe) => {
+      return !recipe.allergens.includes("Nuts")
     })
 
   }
@@ -52,49 +52,48 @@ function Search(params) {
   // These functions are called when the corresponding checkbox is checked. 
   // They filter the `data` passed to them by removing any entries that are not vegan or vegetarian, respectively.
   const veganData = (data) => {
-    return data.filter((entry) => {
-      return entry.vegan.includes("vegan")
+    return data.filter((recipe) => {
+      return recipe.vegan.includes("vegan")
     })
 
   }
   const vegetarianData = (data) => {
-    return data.filter((entry) => {
-      return entry.vegetarian.includes("vegetarian")
+    return data.filter((recipe) => {
+      return recipe.vegetarian.includes("vegetarian")
     })
 
   }
 
-
   // This effect is called whenever any of the dependencies in the second argument are changed.
   // It checks whether any of the filter checkboxes are checked. If none of them are checked, 
-  // it sets `recipeData` to `combinedFiltered`. 
-  // If any of the checkboxes are checked, it filters `result` using the corresponding function 
-  // (e.g. `dairyData` if `filterDairy` is `true`) and sets `recipeData` to the filtered `result`.
+  // it sets `recipeData` to `finalFilter`. 
+  // If any of the checkboxes are checked, it filters `filter` using the corresponding function 
+  // (e.g. `dairyData` if `filterDairy` is `true`) and sets `recipeData` to the filtered `filter`.
   useEffect(() => {
     if (!filterDairy && !filterGluten && !filterNuts && !filterVegan && !filterVegetarian) {
-      setRecipeData(combinedFiltered)
+      setRecipeData(finalFilter)
     }
 
     else {
 
       if (filterDairy) {
-        result = dairyData(result)
+        filter = dairyData(filter)
       }
       if (filterGluten) {
-        result = glutenData(result)
+        filter = glutenData(filter)
       }
       if (filterNuts) {
-        result = nutsData(result)
+        filter = nutsData(filter)
       }
       if (filterVegan) {
-        result = veganData(result)
+        filter = veganData(filter)
       }
       if (filterVegetarian) {
-        result = vegetarianData(result)
+        filter = vegetarianData(filter)
       }
-      setRecipeData(result)
+      setRecipeData(filter)
     }
-  }, [searchField, ingredientsField, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian])
+  }, [searchValue, ingredientsValue, filterDairy, filterGluten, filterNuts, filterVegan, filterVegetarian])
 
 
   return (
@@ -105,7 +104,7 @@ function Search(params) {
           className="form-control"
           type="text"
           placeholder="Search via recipe name"
-          onChange={(e) => setSearchField(e.target.value)}
+          onChange={(e) => setSearchValue(e.target.value)}
           style={{ width: 70 + '%' }}
         />
       </div>
@@ -116,7 +115,7 @@ function Search(params) {
           className="form-control"
           type="text"
           placeholder="Search via recipe ingredient"
-          onChange={(e) => setIngredientsField(e.target.value)}
+          onChange={(e) => setIngredientsValue(e.target.value)}
           style={{ width: 50 + '%' }} />
 
       </div>
@@ -125,9 +124,17 @@ function Search(params) {
         <div class="filterformatting" >
           Filter by Excluding Allergen
 
-          <div> <label class="filtertext"> Dairy </label> <Checkbox value={filterDairy} onClick={() => setFilterDairy(!filterDairy)} /></div>
-          <div> <label class="filtertext"> Gluten </label> <Checkbox value={filterGluten} onClick={() => setFilterGluten(!filterGluten)} /></div>
-          <div> <label class="filtertext"> Nuts </label> <Checkbox value={filterNuts} onClick={() => setFilterNuts(!filterNuts)} /></div>
+          <div> <label class="filtertext"> Dairy </label> 
+          <Checkbox value={filterDairy} onClick={() => setFilterDairy(!filterDairy)} />
+          </div>
+          <div> 
+            <label class="filtertext"> Gluten </label> 
+          <Checkbox value={filterGluten} onClick={() => setFilterGluten(!filterGluten)} />
+          </div>
+          <div> 
+            <label class="filtertext"> Nuts </label> 
+          <Checkbox value={filterNuts} onClick={() => setFilterNuts(!filterNuts)} />
+          </div>
 
         </div>
 
@@ -139,11 +146,13 @@ function Search(params) {
       </div>
       
 
-      {/* Render RecipeItems component based on the type specified in the params object */}
-      {recipeData && <>
-        {params.type === "foodrecipe" && <RecipeItems type={"foodrecipe"} items={recipeData} />}
-        {params.type === "recipemenu" && <RecipeItems type={"recipemenu"} items={recipeData} />}
-        {params.type === "shoppinglist" && <RecipeItems type={"shoppinglist"} items={recipeData} />}
+      {/* Render RecipeItems component based on the type specified in the parameters object */}
+      {recipeData && <>{parameters.type === "foodrecipe" && 
+      <RecipeItems type={"foodrecipe"} items={recipeData}/>}
+        {parameters.type === "recipemenu" && 
+        <RecipeItems type={"recipemenu"} items={recipeData} />}
+        {parameters.type === "shoppinglist" && 
+        <RecipeItems type={"shoppinglist"} items={recipeData} />}
       </>}
     </div>
 
