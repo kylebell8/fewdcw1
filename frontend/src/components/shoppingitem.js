@@ -9,8 +9,8 @@ const Item = ({ food }) => {
 
 
 
-
   // Render a div element containing the Accordion.Header and Accordion.Body components from the react-bootstrap library, along with several elements containing dynamic content from the "food" prop
+
   return (
     <div>
       {/* Render the "name" property of the "food" object as the header of the Accordion component */}

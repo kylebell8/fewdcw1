@@ -1,20 +1,21 @@
-import React from "react";
-import Filter from "./Filter"
+import { useEffect } from 'react'; // Import the React library
+import Filter from "./Filter" // Import the Filter component
 
-// The Search component takes in an array of details as a prop and filters it based on whether the entry is in the menu
-function Search({ details }) {
-    
-    // Filter the details array to only include entries that have "menu" in their menu field
+const MenuRecipe = ({ details }) => {
+    useEffect(() => {
+      // This will trigger a re-render when the entry.menu array changes
+    }, [details]);
+  
+    // Create a new array called "menufilter" which includes only the objects in "details" where the "menu" property includes the string "menu"
     const menufilter = details.filter((entry) => {
         return entry.menu.includes("menu");
     });
-    
-  // Return a div containing the Filter component with the filtered details array and the type "recipemenu"
+  
+    // Render a div element which contains the Filter component, passing in the filtered "menufilter" array as the "details" prop and the string "menufilter" as the "type" prop
     return (
-        <div>
-           {<Filter details={menufilter} type={"recipemenu"}/>}
-        </div>
-        
+      <div>
+        <Filter details={menufilter} type={"recipemenu"}/>
+      </div>
     );
-}
-export default Search;
+  };
+  export default MenuRecipe;

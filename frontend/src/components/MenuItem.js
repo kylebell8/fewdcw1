@@ -9,6 +9,7 @@ import Button from '@mui/material/Button'; // Import the Button component from t
 import Stack from '@mui/material/Stack';// Import the Stack component from the @mui/material library
 import "../index.css" // Import the index.css file from the current directory
 
+
 // Define the Item component, which takes in a prop called "food"
 const Item = ({ food }) => {
   // Declare a state variable called "toggleNutrition" and a function to update it called "SetToggleNutrition"
@@ -18,6 +19,8 @@ const handleChange = (event) => {
   // Set the value of "toggleNutrition" to the opposite of its current value when the Switch component is clicked
   SetToggleNutrition(!toggleNutrition);
 };
+
+
 
   return (
     // Render the component
@@ -74,7 +77,9 @@ const handleChange = (event) => {
         {/* Create a button to remove the food from the menu */}
         <Stack spacing={1} direction="row">
         <Button onClick={() =>  {food.menu.splice(0, food.menu.length)}} variant="contained" size="small">Remove from Menu</Button>
+        
         </Stack>
+        
         <br></br>
         <div class="rcorners">
         <Accordion>
